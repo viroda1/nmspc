@@ -5,41 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Namespace hub for Greasy Fork userscripts by viroda1 — quality browser enhancements and automation tools.">
   <title>Userscript Hub · viroda1</title>
-  <!-- Google Fonts + Font Awesome 6 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #f8fafc;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       color: #0f172a;
       line-height: 1.5;
     }
-
     .container {
       max-width: 1300px;
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
     }
-
-    /* header / hero */
     .hero {
       background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
       border-radius: 2rem;
       padding: 2rem 2rem 1.8rem;
       margin-bottom: 2.8rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);
       border: 1px solid #e2e8f0;
     }
-
     .profile-row {
       display: flex;
       flex-wrap: wrap;
@@ -47,36 +36,25 @@
       align-items: center;
       gap: 1.5rem;
     }
-
     .profile-info {
       display: flex;
       align-items: center;
       gap: 1.2rem;
       flex-wrap: wrap;
     }
-
     .avatar {
       width: 72px;
       height: 72px;
-      background: #1e293b;
+      background: linear-gradient(145deg, #2563eb, #1e40af);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 2rem;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      background: linear-gradient(145deg, #2563eb, #1e40af);
       overflow: hidden;
     }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
     .title h1 {
       font-size: 1.9rem;
       font-weight: 800;
@@ -86,35 +64,22 @@
       -webkit-background-clip: text;
       color: transparent;
     }
-
-    .title p {
-      color: #334155;
-      margin-top: 0.3rem;
-      font-size: 0.95rem;
-    }
-
+    .title p { color: #334155; margin-top: 0.3rem; font-size: 0.95rem; }
     .stats-badge {
       background: white;
       padding: 0.6rem 1.2rem;
       border-radius: 60px;
       font-size: 0.9rem;
       font-weight: 500;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
       border: 1px solid #e2e8f0;
     }
-
-    .stats-badge i {
-      margin-right: 8px;
-      color: #3b82f6;
-    }
-
+    .stats-badge i { margin-right: 8px; color: #3b82f6; }
     .action-buttons {
       display: flex;
       gap: 0.8rem;
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -123,30 +88,15 @@
       border-radius: 40px;
       font-weight: 500;
       font-size: 0.9rem;
-      transition: all 0.2s ease;
       text-decoration: none;
       background: white;
       border: 1px solid #cbd5e1;
       color: #1e293b;
+      transition: all 0.2s;
     }
-
-    .btn-primary {
-      background: #0f172a;
-      border-color: #0f172a;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #1e293b;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline:hover {
-      background: #f1f5f9;
-      transform: translateY(-1px);
-    }
-
-    /* controls */
+    .btn-primary { background: #0f172a; border-color: #0f172a; color: white; }
+    .btn-primary:hover { background: #1e293b; transform: translateY(-2px); }
+    .btn-outline:hover { background: #f1f5f9; transform: translateY(-1px); }
     .toolbar {
       display: flex;
       justify-content: space-between;
@@ -155,7 +105,6 @@
       margin-bottom: 2rem;
       gap: 1rem;
     }
-
     .counter {
       background: #eef2ff;
       padding: 0.3rem 1rem;
@@ -164,47 +113,35 @@
       font-weight: 600;
       color: #1e40af;
     }
-
     .refresh-btn {
       background: white;
       border: 1px solid #cbd5e1;
       padding: 0.5rem 1rem;
       border-radius: 40px;
       cursor: pointer;
-      transition: all 0.2s;
       font-size: 0.85rem;
       font-weight: 500;
     }
-
-    .refresh-btn:hover {
-      background: #f8fafc;
-      border-color: #94a3b8;
-    }
-
-    /* grid cards */
+    .refresh-btn:hover { background: #f8fafc; border-color: #94a3b8; }
     .scripts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.6rem;
     }
-
     .script-card {
       background: #ffffff;
       border-radius: 1.5rem;
       border: 1px solid #e9eef3;
       padding: 1.3rem 1.5rem 1.5rem;
       transition: all 0.25s ease;
-      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-direction: column;
     }
-
     .script-card:hover {
       transform: translateY(-4px);
       border-color: #cbdff5;
-      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.08);
     }
-
     .card-header {
       display: flex;
       justify-content: space-between;
@@ -212,25 +149,16 @@
       gap: 0.5rem;
       margin-bottom: 0.75rem;
     }
-
     .script-name {
       font-size: 1.25rem;
       font-weight: 700;
       line-height: 1.3;
-      color: #0f172a;
-      text-decoration: none;
     }
-
     .script-name a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.2s;
     }
-
-    .script-name a:hover {
-      color: #2563eb;
-    }
-
+    .script-name a:hover { color: #2563eb; }
     .install-badge {
       background: #e6f7e6;
       color: #15803d;
@@ -240,7 +168,6 @@
       font-weight: 600;
       white-space: nowrap;
     }
-
     .description {
       color: #334155;
       font-size: 0.85rem;
@@ -249,9 +176,7 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      line-height: 1.45;
     }
-
     .meta-grid {
       display: flex;
       flex-wrap: wrap;
@@ -262,7 +187,6 @@
       border-top: 1px solid #f0f2f5;
       padding-top: 0.8rem;
     }
-
     .meta-item {
       display: flex;
       align-items: center;
@@ -271,7 +195,6 @@
       padding: 0.2rem 0.6rem;
       border-radius: 20px;
     }
-
     .card-actions {
       margin-top: auto;
       display: flex;
@@ -279,7 +202,6 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
     .install-btn {
       background: #0f172a;
       border: none;
@@ -291,23 +213,15 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
       text-decoration: none;
     }
-
-    .install-btn:hover {
-      background: #1e293b;
-      transform: scale(0.98);
-    }
-
+    .install-btn:hover { background: #1e293b; transform: scale(0.98); }
     .details-link {
       font-size: 0.75rem;
       color: #3b82f6;
       text-decoration: none;
       font-weight: 500;
     }
-
     .loading-state, .error-state, .empty-state {
       text-align: center;
       padding: 4rem 2rem;
@@ -315,7 +229,6 @@
       border-radius: 2rem;
       border: 1px solid #eef2ff;
     }
-
     .spinner {
       width: 42px;
       height: 42px;
@@ -325,11 +238,7 @@
       animation: spin 0.8s linear infinite;
       margin: 0 auto 1rem;
     }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
+    @keyframes spin { to { transform: rotate(360deg); } }
     footer {
       margin-top: 3.5rem;
       text-align: center;
@@ -338,7 +247,6 @@
       border-top: 1px solid #e2e8f0;
       padding-top: 2rem;
     }
-
     @media (max-width: 680px) {
       .hero { padding: 1.5rem; }
       .profile-row { flex-direction: column; align-items: flex-start; }
@@ -359,7 +267,7 @@
           <p><i class="fas fa-globe"></i> Greasy Fork namespace • quality browser enhancements & automation</p>
         </div>
       </div>
-      <div class="stats-badge" id="globalStats">
+      <div class="stats-badge">
         <i class="fas fa-cube"></i> <span id="scriptCount">—</span> scripts
       </div>
     </div>
@@ -367,49 +275,40 @@
       <a href="https://greasyfork.org/en/users/1583457-viroda1" target="_blank" class="btn btn-outline" rel="noopener">
         <i class="fab fa-greasy-fork"></i> Greasy Fork profile
       </a>
-      <button id="refreshBtn" class="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh scripts</button>
+      <button id="refreshBtn" class="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
     </div>
   </div>
 
   <div class="toolbar">
-    <div class="counter" id="liveCounter">
-      <i class="fas fa-list-ul"></i> <span id="shownCount">0</span> scripts loaded
-    </div>
+    <div class="counter"><i class="fas fa-list-ul"></i> <span id="shownCount">0</span> scripts loaded</div>
     <div><i class="fas fa-download"></i> click <strong>Install</strong> → userscript manager required</div>
   </div>
 
   <div id="scriptsContainer">
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <p>Fetching scripts from Greasy Fork for <strong>viroda1</strong>...</p>
-      <small>⚡ using direct user ID (1583457)</small>
-    </div>
+    <div class="loading-state"><div class="spinner"></div><p>Loading scripts from local catalog...</p></div>
   </div>
   <footer>
-    <p><i class="fas fa-code-branch"></i> namespace hub · scripts by viroda1 · dynamically loaded from Greasy Fork API</p>
-    <p style="margin-top: 0.5rem;">⭐ Install a userscript manager (Tampermonkey / Violentmonkey) to use these scripts</p>
+    <p><i class="fas fa-code-branch"></i> namespace hub · scripts by viroda1 · powered by local JSON</p>
+    <p>⭐ Install a userscript manager (Tampermonkey / Violentmonkey) to use these scripts</p>
   </footer>
 </div>
 
 <script>
-  // Direct user ID from the provided Greasy Fork URL
   const USER_ID = 1583457;
   const USERNAME = "viroda1";
 
-  // DOM elements
   const container = document.getElementById("scriptsContainer");
   const refreshBtn = document.getElementById("refreshBtn");
   const scriptCountSpan = document.getElementById("scriptCount");
   const shownCountSpan = document.getElementById("shownCount");
   const avatarDiv = document.getElementById("avatarPlaceholder");
 
-  // Helper: format relative date
   function formatDate(isoString) {
     if (!isoString) return "unknown";
     const date = new Date(isoString);
     if (isNaN(date.getTime())) return isoString;
     const now = new Date();
-    const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor((now - date) / (86400000));
     if (diffDays === 0) return "today";
     if (diffDays === 1) return "yesterday";
     if (diffDays < 7) return `${diffDays} days ago`;
@@ -417,7 +316,6 @@
     return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
   }
 
-  // format install count
   function formatInstalls(num) {
     if (num === undefined || num === null) return "?";
     if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
@@ -425,126 +323,74 @@
     return num.toString();
   }
 
-  // Fetch user info (name + avatar) using user ID
   async function fetchUserInfo() {
     try {
-      const userUrl = `https://greasyfork.org/en/users/${USER_ID}.json`;
-      const res = await fetch(userUrl);
+      const res = await fetch(`https://greasyfork.org/en/users/${USER_ID}.json`);
       if (!res.ok) return null;
       const data = await res.json();
       return data;
-    } catch (e) {
-      console.warn("Could not fetch user info", e);
-      return null;
-    }
+    } catch { return null; }
   }
 
-  // Main fetch scripts using direct user ID
-  async function fetchUserScripts() {
-    container.innerHTML = `
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <p>Loading scripts for <strong>${USERNAME}</strong>...</p>
-        <small>📦 fetching from Greasy Fork API</small>
-      </div>
-    `;
-    scriptCountSpan.innerText = "⟳";
-    shownCountSpan.innerText = "0";
-
+  async function loadLocalScripts() {
+    container.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading catalog...</p></div>`;
     try {
-      // 1. optionally fetch user details for avatar
-      const userInfo = await fetchUserInfo();
-      if (userInfo && userInfo.avatar_url && !userInfo.avatar_url.includes("identicon")) {
-        avatarDiv.innerHTML = `<img src="${userInfo.avatar_url}" alt="avatar">`;
-      } else {
-        avatarDiv.innerHTML = `<i class="fas fa-user-astronaut"></i>`;
-      }
+      const response = await fetch('scripts.json');
+      if (!response.ok) throw new Error('Could not load scripts.json');
+      const data = await response.json();
+      let scripts = data.scripts || [];
 
-      // 2. fetch scripts list for the specific user ID
-      const scriptsUrl = `https://greasyfork.org/en/users/${USER_ID}/scripts.json`;
-      const scriptsRes = await fetch(scriptsUrl);
-      if (!scriptsRes.ok) throw new Error(`Failed to fetch scripts (HTTP ${scriptsRes.status})`);
-
-      let scripts = await scriptsRes.json();
-      if (!Array.isArray(scripts)) scripts = [];
-
-      // sort by last updated (newest first)
       scripts.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-      // update stats
       scriptCountSpan.innerText = scripts.length;
       shownCountSpan.innerText = scripts.length;
 
       if (scripts.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <i class="fas fa-box-open" style="font-size: 3rem; color: #94a3b8;"></i>
-            <h3 style="margin: 1rem 0 0.5rem;">No public scripts found</h3>
-            <p>User ${USERNAME} hasn't published any scripts yet, or they are still pending moderation.</p>
-            <a href="https://greasyfork.org/en/users/${USER_ID}-${USERNAME}" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">Visit profile on Greasy Fork</a>
-          </div>
-        `;
+        container.innerHTML = `<div class="empty-state"><i class="fas fa-box-open" style="font-size: 3rem; color: #94a3b8;"></i><h3>No scripts in catalog</h3><p>Add your scripts to scripts.json</p></div>`;
         return;
       }
 
       renderScriptCards(scripts);
     } catch (err) {
-      console.error(err);
-      container.innerHTML = `
-        <div class="error-state">
-          <i class="fas fa-exclamation-triangle" style="font-size: 2.8rem; color: #f97316;"></i>
-          <h3 style="margin: 1rem 0 0.5rem;">Unable to load scripts</h3>
-          <p>${err.message || "Network or API issue"}</p>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Make sure the user ID (${USER_ID}) is correct and Greasy Fork API is reachable.</p>
-          <button id="retryBtn" class="refresh-btn" style="margin-top: 1rem;"><i class="fas fa-redo-alt"></i> Retry</button>
-        </div>
-      `;
-      const retryBtn = document.getElementById("retryBtn");
-      if (retryBtn) retryBtn.addEventListener("click", fetchUserScripts);
+      container.innerHTML = `<div class="error-state"><i class="fas fa-exclamation-triangle" style="font-size: 2.8rem; color: #f97316;"></i><h3>Failed to load scripts.json</h3><p>${err.message}</p><button id="retryBtn" class="refresh-btn" style="margin-top:1rem;">Retry</button></div>`;
+      document.getElementById("retryBtn")?.addEventListener("click", loadLocalScripts);
       scriptCountSpan.innerText = "0";
       shownCountSpan.innerText = "0";
     }
   }
 
-  // Render script cards
   function renderScriptCards(scripts) {
     const gridHtml = `
       <div class="scripts-grid">
         ${scripts.map(script => {
           const scriptId = script.id;
-          const name = script.name || "Unnamed script";
-          const description = script.description || "No description provided.";
+          const name = script.name || "Unnamed";
+          const desc = script.description || "No description provided.";
           const totalInstalls = script.total_installs ?? 0;
           const dailyInstalls = script.daily_installs ?? 0;
-          const updatedAt = script.updated_at || script.created_at;
-          const createdDate = script.created_at;
+          const updated = script.updated_at;
+          const created = script.created_at;
           const installUrl = `https://greasyfork.org/scripts/${scriptId}/user.js`;
-          const scriptPageUrl = `https://greasyfork.org/scripts/${scriptId}`;
-          const safeDescription = escapeHtml(description);
+          const detailsUrl = `https://greasyfork.org/scripts/${scriptId}`;
+          const safeDesc = escapeHtml(desc);
           const safeName = escapeHtml(name);
 
           return `
             <div class="script-card">
               <div class="card-header">
-                <div class="script-name">
-                  <a href="${scriptPageUrl}" target="_blank" rel="noopener">${safeName}</a>
-                </div>
+                <div class="script-name"><a href="${detailsUrl}" target="_blank">${safeName}</a></div>
                 <span class="install-badge"><i class="fas fa-mouse-pointer"></i> USERS</span>
               </div>
-              <div class="description">${safeDescription.length > 180 ? safeDescription.substring(0, 180) + "…" : safeDescription}</div>
+              <div class="description">${safeDesc.length > 180 ? safeDesc.substring(0,180)+"…" : safeDesc}</div>
               <div class="meta-grid">
                 <span class="meta-item"><i class="fas fa-download"></i> ${formatInstalls(totalInstalls)} total</span>
                 <span class="meta-item"><i class="fas fa-chart-line"></i> ${dailyInstalls}/day</span>
-                <span class="meta-item"><i class="far fa-calendar-alt"></i> ${formatDate(updatedAt)}</span>
-                ${createdDate ? `<span class="meta-item"><i class="far fa-clock"></i> created ${formatDate(createdDate)}</span>` : ''}
+                <span class="meta-item"><i class="far fa-calendar-alt"></i> ${formatDate(updated)}</span>
+                ${created ? `<span class="meta-item"><i class="far fa-clock"></i> created ${formatDate(created)}</span>` : ''}
               </div>
               <div class="card-actions">
-                <a href="${installUrl}" class="install-btn" target="_blank" rel="noopener">
-                  <i class="fas fa-download"></i> Install script
-                </a>
-                <a href="${scriptPageUrl}" class="details-link" target="_blank" rel="noopener">
-                  details <i class="fas fa-arrow-right"></i>
-                </a>
+                <a href="${installUrl}" class="install-btn" target="_blank"><i class="fas fa-download"></i> Install script</a>
+                <a href="${detailsUrl}" class="details-link" target="_blank">details <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           `;
@@ -555,7 +401,6 @@
     shownCountSpan.innerText = scripts.length;
   }
 
-  // simple escape helper
   function escapeHtml(str) {
     if (!str) return "";
     return str.replace(/[&<>]/g, function(m) {
@@ -563,18 +408,20 @@
       if (m === '<') return '&lt;';
       if (m === '>') return '&gt;';
       return m;
-    }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-      return c;
     });
   }
 
-  // refresh button listener
-  refreshBtn.addEventListener("click", () => {
-    fetchUserScripts();
-  });
+  // Try to load avatar from Greasy Fork (optional)
+  fetchUserInfo().then(userInfo => {
+    if (userInfo?.avatar_url && !userInfo.avatar_url.includes("identicon")) {
+      avatarDiv.innerHTML = `<img src="${userInfo.avatar_url}" alt="avatar">`;
+    } else {
+      avatarDiv.innerHTML = `<i class="fas fa-user-astronaut"></i>`;
+    }
+  }).catch(() => {});
 
-  // initial load
-  fetchUserScripts();
+  refreshBtn.addEventListener("click", loadLocalScripts);
+  loadLocalScripts();
 </script>
 </body>
 </html>
